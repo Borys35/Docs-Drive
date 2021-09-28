@@ -10,11 +10,16 @@ const Layout: FC = ({ children }) => {
   return (
     <main>
       <Navbar />
-      <Children>{children}</Children>
-      <p style={{ textAlign: "center", padding: "4rem 0 1.5rem" }}>
-        &copy; {new Date().getFullYear()} Borys Kaczmarek |{" "}
-        <a href="/">Source code</a> | <a href="/">E-mail</a>
-      </p>
+      <Children>
+        {children}
+        <p style={{ textAlign: "center", padding: "4rem 0 1.5rem" }}>
+          &copy; {new Date().getFullYear()} Borys Kaczmarek |{" "}
+          <a href="/https://github.com/Borys35/Docs-Drive" target="_blank">
+            Source code
+          </a>{" "}
+          | <a href="mailto:boryskac10@gmail.com">E-mail</a>
+        </p>
+      </Children>
     </main>
   );
 };
