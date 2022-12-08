@@ -1,17 +1,17 @@
 export const colors = {
-  background: "#E6E9EF",
-  backgroundLight: "#FBFCFF",
-  primary: "#558FFF",
-  grey: "#AAAAAA",
-  black: "#111111",
+  background: "#17171B",
+  backgroundLight: "#101012",
+  primary: "#F6CF00",
+  grey: "#EFEFEF",
+  black: "#F8F8F8",
 };
 
 export const fontFamilies = {
-  heading: "'Open Sans', sans-serif",
-  body: "'Open Sans', sans-serif",
+  heading: "'Work Sans', sans-serif",
+  body: "'Work Sans', sans-serif",
 };
 
-export const horizontalPadding = "clamp(2rem, 10vw, 5rem)";
+export const horizontalPadding = "clamp(1rem, 4vw, 5rem)";
 
 const theme = {
   colors,

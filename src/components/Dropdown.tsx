@@ -16,7 +16,9 @@ const Container = styled.div`
   position: relative;
 `;
 
-const Button = styled(Item)``;
+const Button = styled(Item)`
+  color: ${({ theme }) => theme.colors.black};
+`;
 
 // 0.5em 1.25em
 const Content = styled(Item)`

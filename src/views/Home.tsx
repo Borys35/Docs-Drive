@@ -30,22 +30,31 @@ const Home = () => {
       {loggedIn ? (
         <Loading>
           <Section>
-            <h1 style={{ marginBottom: "1.5rem" }}>Welcome to Docs Drive</h1>
+            <h1 style={{ marginBottom: "5rem" }}>Your drive</h1>
+            <h5 style={{ marginBottom: "1.5rem" }}>Quick actions</h5>
             <OperationGrid compact={false} />
           </Section>
           <Section>
-            <h3 style={{ marginBottom: "1.5rem" }}>Folders</h3>
+            <h5 style={{ marginBottom: "1.5rem" }}>Folders</h5>
             <FolderList items={subfolders} />
           </Section>
           <Section>
-            <h3 style={{ marginBottom: "1.5rem" }}>Files</h3>
+            <h5 style={{ marginBottom: "1.5rem" }}>Files</h5>
             <FileGrid items={subfiles} />
           </Section>
         </Loading>
       ) : (
-        <div>
-          <h1 style={{ marginBottom: "1.5rem" }}>Welcome to Docs Drive</h1>
-          <Item to="/sign-in">Sign in</Item>
+        <div style={{ textAlign: "center" }}>
+          <h1 style={{ marginBottom: "1.5rem" }}>
+            Create, write, edit, export{" "}
+          </h1>
+          <p style={{ marginBottom: "4rem" }}>
+            Use Docs Drive directly in your browser and save it in cloud
+            database with no need to save it manually!
+          </p>
+          <Item to="/sign-in" primary>
+            Sign in
+          </Item>
         </div>
       )}
     </Layout>

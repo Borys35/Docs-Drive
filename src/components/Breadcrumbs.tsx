@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const StyledLink = styled(Link)`
   font-size: 1.2em;
-  // font-weight: bold;
+  font-weight: bold;
   text-decoration: underline;
 `;
 

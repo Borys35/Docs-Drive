@@ -10,8 +10,8 @@ interface Props {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 220px);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 `;
 
@@ -22,7 +22,12 @@ const FileGrid: FC<Props> = ({ items }) => {
     <Container>
       {items.length ? (
         items.map(({ id, name }) => (
-          <LargeItem key={id} to={`/file/${id}`} icon={FaFile}>
+          <LargeItem
+            key={id}
+            to={`/file/${id}`}
+            icon={FaFile}
+            style={{ minWidth: "160px" }}
+          >
             {name}
           </LargeItem>
         ))

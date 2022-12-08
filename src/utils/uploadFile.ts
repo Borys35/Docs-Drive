@@ -1,7 +1,7 @@
 export function uploadFile(callback: Function) {
   const input = document.createElement("input");
   input.type = "file";
-  input.accept = ".txt, .pdf, .doc, .docx, .rtf, .html";
+  input.accept = ".txt, .rtf";
   input.addEventListener("change", function (e: Event) {
     const file = this.files && this.files[0];
     if (!file) return;
@@ -11,13 +11,6 @@ export function uploadFile(callback: Function) {
       if (!event || !event.target) return;
 
       callback(file.name, event.target.result);
-
-      // console.log(
-      //   "File content:",
-      //   event.target.result,
-      //   "\n\ntext",
-      //   await file.text()
-      // );
     };
     fileReader.readAsText(file);
   });

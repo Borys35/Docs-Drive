@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { RootState } from "../redux/store";
 import Element from "./Element";
+import Item from "./Item";
 
 const StyledNavbar = styled(Element)`
   border-top-left-radius: 0;
@@ -13,19 +14,37 @@ const StyledNavbar = styled(Element)`
   align-items: center;
 `;
 
+const StyledList = styled.div({
+  display: "none",
+  fontWeight: "bold",
+
+  "@media (min-width: 768px)": {
+    display: "flex",
+    gap: "2rem",
+    alignItems: "center",
+  },
+});
+
 const Navbar = () => {
   const loggedIn = useSelector((state: RootState) => state.auth.loggedIn);
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <StyledNavbar>
       <Link to="/">
-        <h6>Docs Drive</h6>
+        <h5>Docs Drive</h5>
       </Link>
-      {loggedIn ? (
-        <Link to="/profile">Profile</Link>
-      ) : (
-        <Link to="/sign-in">Sign in</Link>
-      )}
+      <StyledList>
+        {loggedIn ? (
+          <Link to="/profile">{user.displayName}</Link>
+        ) : (
+          <>
+            <Item to="/sign-in" primary>
+              Sign in
+            </Item>
+          </>
+        )}
+      </StyledList>
     </StyledNavbar>
   );
 };

@@ -15,18 +15,12 @@ import { firestore } from "../firebase";
 import useDebounce from "../hooks/useDebounce";
 import { currentFileUpdate, fetchCurrentFile } from "../redux/actions";
 import { RootState } from "../redux/store";
-import {
-  exportToDoc,
-  exportToHtml,
-  exportToPdf,
-  exportToRtf,
-  exportToTxt,
-} from "../utils/exportToFiles";
+import { exportToHtml, exportToRtf, exportToTxt } from "../utils/exportToFiles";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 `;
 
 const Toolbar = styled.div`
@@ -61,14 +55,6 @@ const File = () => {
     {
       text: "Text File (.txt)",
       onClick: () => exportToTxt(name, content),
-    },
-    {
-      text: "MS Document (.doc)",
-      onClick: () => exportToDoc(name, content),
-    },
-    {
-      text: "Portable Document Format (.pdf)",
-      onClick: () => exportToPdf(name, content),
     },
     {
       text: "HTML File (.html)",
@@ -113,7 +99,9 @@ const File = () => {
       <Loading>
         <Container>
           <Breadcrumbs />
-          {updating ? "Saving changes..." : "Changes saved"}
+          <p style={{ marginTop: "2rem" }}>
+            {updating ? "Saving changes..." : "Changes saved"}
+          </p>
           <Toolbar>
             <Input
               placeholder="Enter file name..."

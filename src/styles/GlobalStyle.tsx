@@ -14,10 +14,8 @@ Modal.defaultStyles = {
   content: {
     position: "absolute",
     backgroundColor: `${theme.colors.background}`,
-    boxShadow: `0 0 24px ${theme.colors.black}22`,
     overflow: "auto",
     WebkitOverflowScrolling: "touch",
-    border: `1px solid ${theme.colors.grey}`,
     borderRadius: ".5rem",
     outline: "none",
     padding: "2rem",
@@ -35,9 +33,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fontFamilies.body};
   }
 
+  :root {
+    font-size: 12px;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.black}
+    color: ${({ theme }) => theme.colors.black};
+    padding: 0 ${({ theme }) => theme.horizontalPadding};
   }
 
   a {
@@ -50,11 +53,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   h2 {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   h3 {
@@ -66,11 +69,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h5 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   h6 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      font-size: 16px;
+    }
   }
 `;
 

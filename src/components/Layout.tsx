@@ -2,25 +2,35 @@ import { FC } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 
+const Main = styled.main({
+  display: "flex",
+  flexDirection: "column",
+  minHeight: "100vh",
+});
+
 const Children = styled.div`
-  padding: ${({ theme }) => `3rem ${theme.horizontalPadding}`};
+  padding: 4rem 0;
+  flex: 1;
 `;
 
 const Layout: FC = ({ children }) => {
   return (
-    <main>
+    <Main>
       <Navbar />
-      <Children>
-        {children}
-        <p style={{ textAlign: "center", padding: "4rem 0 1.5rem" }}>
+      <Children>{children}</Children>
+      <footer>
+        <p style={{ textAlign: "center", padding: "0 0 1.5rem" }}>
           &copy; {new Date().getFullYear()} Borys Kaczmarek |{" "}
-          <a href="/https://github.com/Borys35/Docs-Drive" target="_blank">
-            Source code
-          </a>{" "}
-          | <a href="mailto:boryskac10@gmail.com">E-mail</a>
+          <a
+            href="https://github.com/Borys35/Docs-Drive"
+            target="_blank"
+            rel="noreferrer"
+          >
+            source code
+          </a>
         </p>
-      </Children>
-    </main>
+      </footer>
+    </Main>
   );
 };
 

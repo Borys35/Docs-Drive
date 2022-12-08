@@ -15,9 +15,9 @@ interface Props {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 `;
 
 const CompactContainer = styled.div`
